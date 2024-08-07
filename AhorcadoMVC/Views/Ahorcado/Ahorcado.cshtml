@@ -1,0 +1,26 @@
+﻿@model Hangman
+@{
+    ViewBag.Title = "Hangman";
+}
+
+<h2>Hangman Game</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-info">
+        @ViewBag.Message
+    </div>
+}
+
+<p>Word to guess: @Model.CurrentGuess</p>
+<p>Attempts left: @Model.AttemptsLeft</p>
+
+<form asp-action="Guess" method="post">
+    <div class="form-group">
+        <label for="letter">Guess a letter:</label>
+        <input type="text" name="letter" maxlength="1" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Guess</button>
+</form>
+
+<p>Guessed letters: @string.Join(", ", Model.GuessedLetters)</p>

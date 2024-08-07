@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Start Game";
+}
+
+<h2>Start a new game</h2>
+
+<form asp-action="Start" method="post">
+    <div class="form-group">
+        <label for="wordToGuess">Word to Guess:</label>
+        <input type="text" name="wordToGuess" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Start Game</button>
+</form>
+
